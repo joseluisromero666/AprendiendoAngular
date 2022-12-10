@@ -1,0 +1,27 @@
+
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+  </ng-container>
+
+
+<div class="row" [ngClass]="{'completed' : item.completed}">
+  <div>
+    <input type="checkbox" name="checkbox" id="checkbox" [checked]="item.completed"
+   (change)="onToggle(item)" >
+  </div>
+  <div class="title">
+    {{item.title}}
+  </div>
+  <div class="price">
+    {{item.price|currency}}
+  </div>
+  <div class="quantity">
+    {{item.quantity}}
+  </div>
+  <div class="Total">
+    {{item.price*item.quantity|currency}}
+  </div>
+<div class="Actions">
+  <button (click)="onDelete(item)">Eliminar</button>
+</div>
+</div>
